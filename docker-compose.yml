@@ -131,7 +131,10 @@ services:
       POSTGRES_HOSTNAME: postgres
       POSTGRES_PASSWORD: 'ChooseYourOwnPasswordHere1234'
       POSTGRES_USER: guacamole_user
+      HEADER_ENABLED: "true"
     image: guacamole/guacamole
+    volumes:
+      - /root/guacamole/guacamole-exts:/opt/EXTS_GUACAMOLE
     links:
     - guacd
     networks:
